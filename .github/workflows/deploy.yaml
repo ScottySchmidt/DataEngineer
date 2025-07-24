@@ -8,15 +8,21 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
       - name: Install Astro CLI
-        run: curl -sSL https://install.astronomer.io | sudo bash
+        run: npm install -g astro@latest
 
       - name: Log in to Astro
-        run: astro auth login cmdhs41m11ec701nbuy12sr9a --token ${{ secrets.ASTRO_API_TOKEN }}
+        run: astro login --token ${{ secrets.ASTRO_API_TOKEN }}
 
       - name: Deploy project to Astro
         run: astro deploy
