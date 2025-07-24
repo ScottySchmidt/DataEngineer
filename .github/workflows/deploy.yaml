@@ -1,0 +1,22 @@
+name: Deploy DAGs to Astro
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Astro CLI
+        run: curl -sSL https://install.astronomer.io | sudo bash
+
+      - name: Log in to Astro
+        run: astro auth login <your-workspace-id> --token ${{ secrets.ASTRO_API_TOKEN }}
+
+      - name: Deploy project to Astro
+        run: astro deploy
