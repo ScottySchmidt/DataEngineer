@@ -1,4 +1,4 @@
-# deploy to astro
+# deploy to astro 
 name: Deploy DAG to Astro
 
 on:
