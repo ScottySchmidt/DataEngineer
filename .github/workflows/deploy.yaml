@@ -1,4 +1,4 @@
-name: Deploy DAGs to Astro
+name: Deploy DAG to Astro
 
 on:
   push:
@@ -10,19 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
+      - name: Deploy DAG to Astro
+        uses: astronomer/deploy-action@v1
         with:
-          node-version: '18'
-
-      - name: Install Astro CLI
-        run: npm install -g astro@latest
-
-      - name: Log in to Astro
-        run: astro login --token ${{ secrets.ASTRO_API_TOKEN }}
-
-      - name: Deploy project to Astro
-        run: astro deploy
+          astro-api-token: ${{ secrets.ASTRO_API_TOKEN }}
+          workspace-id: ${{ secrets.ASTRO_WORKSPACE_ID }}
+          deployment-id: ${{ secrets.ASTRO_DEPLOYMENT_ID }}
