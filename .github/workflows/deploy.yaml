@@ -17,4 +17,4 @@ jobs:
     - name: Deploy to Astro
       uses: astronomer/deploy-action@v0.10.1
       with:
-        deployment-id: ${{ secrets.ASTRO_DEPLOYMENT_ID}}
+        deployment-id: ${{secrets.ASTRO_DEPLOYMENT_ID}}
