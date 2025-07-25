@@ -4,7 +4,7 @@ from pendulum import datetime
 import pandas as pd
 
 # In dags/budget_variance_dag.py
-print("🚀 DAG redeployed test")
+print("DAG redeployed test")
 
 @dag(
     schedule="@daily",
