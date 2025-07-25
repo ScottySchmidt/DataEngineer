@@ -8,7 +8,7 @@ on:
 
 env:
   ## Sets Deployment API key credentials as environment variables
-  ASTRO_API_TOKEN: ${{ secrets.ASTRO_API_TOKEN}}
+  ASTRO_API_TOKEN: ${{ secrets.ASTRO_API_TOKEN }}
 
 jobs:
   deploy:
@@ -17,4 +17,4 @@ jobs:
     - name: Deploy to Astro
       uses: astronomer/deploy-action@v0.4
       with:
-        deployment-id: ${{secrets.ASTRO_DEPLOYMENT_ID}}
+        deployment-id: ${{ secrets.ASTRO_DEPLOYMENT_ID }}
