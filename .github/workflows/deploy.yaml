@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Deploy DAG to Astro
-        uses: astronomer/deploy-action@v1
+        uses: astronomer/deploy-action@v1 
         with:
           astro-api-token: ${{ secrets.ASTRO_API_TOKEN }}
           workspace-id: ${{ secrets.ASTRO_WORKSPACE_ID }}
