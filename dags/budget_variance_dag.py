@@ -3,6 +3,9 @@ from airflow.decorators import dag, task
 from pendulum import datetime
 import pandas as pd
 
+# In dags/budget_variance_dag.py
+print("🚀 DAG redeployed test")
+
 @dag(
     schedule="@daily",
     start_date=datetime(2024, 1, 1),
