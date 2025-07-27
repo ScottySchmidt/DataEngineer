@@ -5,11 +5,11 @@ from pendulum import datetime
 def my_pipeline():
     @task
     def pull_data():
-        return "✅ data pulled"
+        return "data pulled"
 
     @task
     def process(data):
-        return f"🚀 {data} processed"
+        return f" {data} processed"
 
     process(pull_data())
 
