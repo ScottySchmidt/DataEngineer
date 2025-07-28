@@ -9,7 +9,7 @@ def s3_upload_example():
     @task
     def upload_to_s3():
         s3 = boto3.client('s3')
-        bucket_name = "my-data-bucket-123"
+        bucket_name = "my-data-bucket-123-scotty"
         s3.upload_file("local_file.csv", bucket_name, "uploads/local_file.csv")
         return "Uploaded successfully"
 
